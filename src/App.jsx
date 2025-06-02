@@ -1,4 +1,4 @@
-import { Button, Counter, Greeting, UserList } from './ components';
+import { Button, Counter, Greeting, PokemonViewer, UserList } from './ components';
 
 const sampleUsers = [
   { id: 1, name: 'Ada Lovelace', picture: 'ada.png' },
@@ -19,6 +19,10 @@ const App = () => {
       <Button label='Click Me' onClick={() => alert('This shows')} />
       <Button label='Click Me' onClick={() => alert('This does not')} disabled />
       <Counter />
+      <PokemonViewer id={1} />
+      <PokemonViewer id={999} />
+      <PokemonViewer id={0} />
+      <PokemonViewer id={150} />
     </div>
   );
 };
