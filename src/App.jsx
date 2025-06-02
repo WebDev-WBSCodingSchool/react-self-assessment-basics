@@ -1,4 +1,4 @@
-import { Button, Greeting, UserList } from './ components';
+import { Button, Counter, Greeting, UserList } from './ components';
 
 const sampleUsers = [
   { id: 1, name: 'Ada Lovelace', picture: 'ada.png' },
@@ -18,6 +18,7 @@ const App = () => {
       <UserList users={123} />
       <Button label='Click Me' onClick={() => alert('This shows')} />
       <Button label='Click Me' onClick={() => alert('This does not')} disabled />
+      <Counter />
     </div>
   );
 };
