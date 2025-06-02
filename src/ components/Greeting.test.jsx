@@ -2,9 +2,12 @@ import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import { Greeting } from '.';
 
-const rendersSomething = !!render(<Greeting name='Ada' />).container.firstChild;
+const rendersSomething = Element => {
+  const { container, unmount } = render(Element);
+  return !!container.firstChild && (unmount(), true);
+};
 
-describe.runIf(rendersSomething)('Greeting Component', () => {
+describe.runIf(rendersSomething(<Greeting />))('Greeting Component', () => {
   it('Renders in a div', () => {
     const { container } = render(<Greeting name='Ada' />);
     const div = container.firstChild;

@@ -16,7 +16,8 @@ const App = () => {
       <Greeting />
       <UserList users={sampleUsers} />
       <UserList users={123} />
-      <Button label='Click Me' onClick={() => alert('Button clicked!')} />
+      <Button label='Click Me' onClick={() => alert('This shows')} />
+      <Button label='Click Me' onClick={() => alert('This does not')} disabled />
     </div>
   );
 };

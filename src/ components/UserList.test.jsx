@@ -7,9 +7,12 @@ const sampleUsers = [
   { id: 2, name: 'Grace Hopper', picture: 'grace.png' }
 ];
 
-const rendersSomething = !!render(<UserList users={sampleUsers} />).container.firstChild;
+const rendersSomething = Element => {
+  const { container, unmount } = render(Element);
+  return !!container.firstChild && (unmount(), true);
+};
 
-describe.runIf(rendersSomething)('UserList Component', () => {
+describe.runIf(rendersSomething(<UserList />))('UserList Component', () => {
   it('Renders a <ul> with list items', () => {
     const { container } = render(<UserList users={sampleUsers} />);
     expect(container.querySelector('ul')).toBeInTheDocument();
