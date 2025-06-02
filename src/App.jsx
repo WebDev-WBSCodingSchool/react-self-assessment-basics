@@ -1,4 +1,9 @@
-import { Button, Greeting } from './ components';
+import { Button, Greeting, UserList } from './ components';
+
+const sampleUsers = [
+  { id: 1, name: 'Ada Lovelace', picture: 'ada.png' },
+  { id: 2, name: 'Grace Hopper', picture: 'grace.png' }
+];
 
 const App = () => {
   return (
@@ -9,6 +14,8 @@ const App = () => {
       </h2>
       <Greeting name='Ada' />
       <Greeting />
+      <UserList users={sampleUsers} />
+      <UserList users={123} />
       <Button label='Click Me' onClick={() => alert('Button clicked!')} />
     </div>
   );
