@@ -1,0 +1,13 @@
+{
+  "files.exclude": {
+    "**/.vscode": true
+  },
+  "github.copilot.enable": {
+    "*": false
+  },
+  "copilotDocs": "https://code.visualstudio.com/docs/copilot/reference/copilot-settings",
+  "chat.commandCenter.enabled": false,
+  "github.copilot.editor.enableCodeActions": false,
+  "workbench.statusBar.visible": false,
+  "workbench.editor.empty.hint": "hidden"
+}
