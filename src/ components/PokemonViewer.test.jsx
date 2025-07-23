@@ -6,7 +6,7 @@ beforeEach(() => (globalThis.fetch = vi.fn()));
 
 afterEach(() => vi.restoreAllMocks());
 
-const rendersSomething = Element => {
+const rendersSomething = (Element) => {
   const { container, unmount } = render(Element);
   return !!container.firstChild && (unmount(), true);
 };
@@ -20,7 +20,7 @@ describe.runIf(rendersSomething(<PokemonViewer />))('PokemonViewer Component', (
   it('Shows loading state initially', async () => {
     globalThis.fetch.mockResolvedValueOnce({
       ok: true,
-      json: async () => ({ name: 'bulbasaur', sprites: { front_default: 'bulba.png' } })
+      json: async () => ({ name: 'bulbasaur', sprites: { front_default: 'bulba.png' } }),
     });
     render(<PokemonViewer id={1} />);
     const loading = await screen.findByText(/loading/i);
@@ -28,12 +28,12 @@ describe.runIf(rendersSomething(<PokemonViewer />))('PokemonViewer Component', (
   });
 
   it('Renders fetched Pokémon name and image', async () => {
-    fetch.mockResolvedValueOnce({
+    fetch.mockResolvedValue({
       ok: true,
       json: async () => ({
         name: 'pikachu',
-        sprites: { front_default: 'pikachu.png' }
-      })
+        sprites: { front_default: 'pikachu.png' },
+      }),
     });
     render(<PokemonViewer id={25} />);
     await waitFor(() => expect(screen.getByText(/pikachu/i)).toBeInTheDocument());

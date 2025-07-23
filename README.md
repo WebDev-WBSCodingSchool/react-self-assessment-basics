@@ -36,7 +36,7 @@ Welcome! This mini-project lets you check your React fundamentals **all on your 
 ### 1. Clone the Repository
 
 ```bash
-$ git clone git@github.com:WebDev-WBSCodingSchool/react-self--assessment-basics.git
+$ git clone git@github.com:WebDev-WBSCodingSchool/react-self-assessment-basics.git
 $ cd react-self-assessment-basics
 ```
 
