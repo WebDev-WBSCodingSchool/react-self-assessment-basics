@@ -23,12 +23,12 @@ describe.runIf(rendersSomething(<PokemonViewer />))('PokemonViewer Component', (
       json: async () => ({ name: 'bulbasaur', sprites: { front_default: 'bulba.png' } }),
     });
     render(<PokemonViewer id={1} />);
-    const loading = await screen.findByText(/loading/i);
+    const loading = screen.getByText(/loading/i);
     expect(loading).toBeInTheDocument();
   });
 
   it('Renders fetched Pokémon name and image', async () => {
-    fetch.mockResolvedValue({
+    fetch.mockResolvedValueOnce({
       ok: true,
       json: async () => ({
         name: 'pikachu',
